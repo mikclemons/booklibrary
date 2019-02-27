@@ -27,7 +27,7 @@ public class Book {
     }
 
     public String getFormattedTitleForImage(){
-        return this.title.toLowerCase().replace(" ", "");
+        return getTitle().toLowerCase().replace(" ", "");
     }
 
     public String getTitle() {
