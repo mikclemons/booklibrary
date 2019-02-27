@@ -9,7 +9,15 @@
 </head>
 <body>
 
-<h1>Hello world! </h1>
+<h1>Welcome to the Library!</h1>
+<div th:each="book : ${books}" class ="container">
+<h1 th:text="'Book Title:' + ${book.title} ">Book Title</h1>
+<h2 th:text="'Author' + ${book.author}">Author</h2>
+    <h3 th:text="'Check out date' + ${book.checkOutDate} ">Check out date</h3>
+<img th:src="'/photos/' + ${book.getFormattedTitleForImage()} + '.jpg'" />
+
+</div>
+
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
