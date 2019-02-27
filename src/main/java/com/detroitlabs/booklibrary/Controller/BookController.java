@@ -6,8 +6,10 @@ import com.detroitlabs.booklibrary.Repository.BookRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -24,6 +26,13 @@ public class BookController {
 
 
         return "home";
+    }
+
+    @RequestMapping("/book/{title}")
+    public String bookDetailsPage(ModelMap modelMap,@PathVariable String title){
+        Book book = bookRepository.findByTitle(title);
+        modelMap.put("book", book);
+        return "bookdetails";
     }
 
 }

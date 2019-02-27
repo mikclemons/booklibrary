@@ -1,0 +1,24 @@
+#title {
+    text-align: center;
+}
+
+img {
+    width: 70%;
+
+
+}
+
+#imageContainer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-around;
+}
+
+#images {
+    width: 20%;
+}
+
+body {
+    background-image: url("spiration-light.png");
+}
+

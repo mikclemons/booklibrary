@@ -26,6 +26,16 @@ public class Book {
         this.isCheckedOut = isCheckedOut;
     }
 
+    public String getCheckoutStatus() {
+        String checkoutStatus;
+        if(isCheckedOut) {
+            checkoutStatus = "This book has been checked out on " + checkOutDate;
+        } else {
+            checkoutStatus = "This book is available.";
+        }
+        return checkoutStatus;
+    }
+
     public String getFormattedTitleForImage(){
         return getTitle().toLowerCase().replace(" ", "");
     }

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Details</title>
+
+</head>
+<body>
+
+<div  class="container" id="imageContainer">
+    <div id = "images">
+        <h1 th:text="'Book Title: ' + ${book.title} ">Book Title</h1>
+        <h2 th:text="'Author ' + ${book.author}">Author</h2>
+        <h3 th:text="${book.getCheckoutStatus()} ">Check out date</h3>
+        <img th:src="'/photos/' + ${book.getFormattedTitleForImage()} + '.jpg'"/>
+    </div>
+
+</div>
+
+</body>
+</html>
