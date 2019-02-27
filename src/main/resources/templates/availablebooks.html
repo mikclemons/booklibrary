@@ -11,8 +11,8 @@
         <h2 th:text="${book.title} ">Book Title</h2>
         <a th:href="'/book/' + ${book.title}">
             <img th:src="'/photos/' + ${book.getFormattedTitleForImage()} + '.jpg'"/>
-
         </a>
+        <form th:action="checkoutbook" method="get" ><input name="checkout" type = "submit" value="checkout book?"/> </form>
     </div>
 </div>
 </body>

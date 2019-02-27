@@ -19,6 +19,17 @@ public class BookRepository {
            new Book("The Sandman", "Neil Gaiman", 3,false));
 
 
+    public Book updateCheckoutStatus(String title){
+        for(Book book: allBooks){
+            if(book.getTitle().equals(title)){
+                book.setCheckedOut(true);
+
+            }
+            return book;
+        }
+        return null;
+    }
+
     public List<Book> getAllBooks(){
         return allBooks;
     }
@@ -42,5 +53,14 @@ public class BookRepository {
         return booksInGenre;
     }
 
+    public List<Book> findAvailableBooks(){
+        List<Book> availableBooks = new ArrayList<>();
+        for (Book book : allBooks) {
+            if(!book.isCheckedOut()){
+                availableBooks.add(book);
+            }
+        }
+        return availableBooks;
+    }
 }
 

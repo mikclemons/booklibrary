@@ -35,4 +35,11 @@ public class BookController {
         return "bookdetails";
     }
 
+    @RequestMapping("/available/")
+    public String showAvailableBooks(ModelMap modelMap){
+        List<Book> availableBooks = bookRepository.findAvailableBooks();
+        modelMap.put("books", availableBooks);
+        return "availablebooks";
+    }
+
 }
