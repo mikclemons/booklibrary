@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link th:href="@{/app.css}" rel="stylesheet"/>
 </head>
 <body>
 
 <div th:each="genre : ${genres}">
-    <a th:href="'/genre/' + ${genre.genreId}" th:text="${genre.genre}">
-
-    </a>
+    <a th:href="'/genre/' + ${genre.genreId}" th:text="${genre.genre}"></a>
 </div>
 
 </body>

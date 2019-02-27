@@ -1,6 +1,7 @@
 package com.detroitlabs.booklibrary.Repository;
 
 import com.detroitlabs.booklibrary.Model.Book;
+import com.detroitlabs.booklibrary.Model.Genre;
 import org.springframework.stereotype.Component;
 
 import java.security.AllPermission;
@@ -29,6 +30,16 @@ public class BookRepository {
             }
         }
         return null;
+    }
+
+    public List<Book> findByGenreId(int id){
+        List<Book> booksInGenre = new ArrayList<>();
+        for (Book book: allBooks) {
+            if(book.getGenre() == id){
+                booksInGenre.add(book);
+            }
+        }
+        return booksInGenre;
     }
 
 }
