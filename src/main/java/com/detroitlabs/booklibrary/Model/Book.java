@@ -26,6 +26,10 @@ public class Book {
         this.isCheckedOut = isCheckedOut;
     }
 
+    public String getFormattedTitleForImage(){
+        return this.title.toLowerCase().replace(" ", "");
+    }
+
     public String getTitle() {
         return title;
     }
