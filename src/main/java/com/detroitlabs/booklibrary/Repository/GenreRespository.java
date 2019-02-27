@@ -19,4 +19,13 @@ public class GenreRespository {
     public List<Genre> getAllGenres(){
         return allGenres;
     }
+
+    public Genre findGenreById(int id) {
+        for (Genre genre: allGenres) {
+            if(genre.getGenreId() == id){
+                return genre;
+            }
+        }
+        return null;
+    }
 }

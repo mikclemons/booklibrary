@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Genres</title>
+    <link th:href="@{/app.css}" rel="stylesheet"/>
+</head>
+<body>
+
+<div th:text="${genre.genre}"></div>
+    <div th:each="book : ${booksInGenre}">
+        <h2 th:text="${book.title} ">Book Title</h2>
+        <a th:href="'/book/' + ${book.title}">
+        <img th:src="'/photos/' + ${book.getFormattedTitleForImage()} + '.jpg'"/>
+    </a>
+    </div>
+
+
+</body>
+</html>
