@@ -16,7 +16,8 @@ public class BookRepository {
    private static List<Book> allBooks = Arrays.asList(
            new Book("Green Eggs and Ham", "Dr.Seuss", 1,false),
            new Book("Hidden Figures", "Margot Lee Shetterly", LocalDate.of(2019,04,04), 2,true),
-           new Book("The Sandman", "Neil Gaiman", 3,false));
+           new Book("The Sandman", "Neil Gaiman", 3,false),
+           new Book("Educated A Memoir", "Tara Westover", 4, true));
 
 
     public Book updateCheckoutStatus(String title){

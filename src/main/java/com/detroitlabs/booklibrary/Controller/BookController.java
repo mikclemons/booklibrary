@@ -42,4 +42,18 @@ public class BookController {
         return "availablebooks";
     }
 
+    @RequestMapping("/checkout/")
+    public String updateBook  (ModelMap modelMap, @RequestParam("title") String title){
+        System.out.println(title);
+        Book book = bookRepository.updateCheckoutStatus(title);
+        modelMap.put("book", book);
+
+
+        return "bookdetails";
+    }
+
+
+
+
+
 }
