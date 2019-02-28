@@ -48,7 +48,6 @@ public class BookController {
         Book book = bookRepository.updateCheckoutStatus(title);
         modelMap.put("book", book);
 
-
         return "bookdetails";
     }
 

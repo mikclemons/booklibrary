@@ -17,10 +17,15 @@ public class BookRepository {
            new Book("Green Eggs and Ham", "Dr.Seuss", 1,false),
            new Book("Hidden Figures", "Margot Lee Shetterly", LocalDate.of(2019,04,04), 2,true),
            new Book("The Sandman", "Neil Gaiman", 3,false),
-           new Book("Educated A Memoir", "Tara Westover", 4, true));
+           new Book("Educated A Memoir", "Tara Westover", 4, false),
+           new Book("Joe the Barbarian", "Grant Morrison", 3, false),
+           new Book("The Very Hungry Caterpillar", "Eric Carle", LocalDate.of(2019,2,11),
+                   1,true)
+   );
 
 
     public Book updateCheckoutStatus(String title){
+
         for(Book book: allBooks){
             if(book.getTitle().equals(title)){
                 book.setCheckedOut(true);

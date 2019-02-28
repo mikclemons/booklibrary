@@ -20,7 +20,7 @@
         <!--We are using this form to get a hidden field
         of the books title to pass into the method we wrote to update the checkout status -->
         <form action="/checkout/" method="get" >
-            <input name = "title" type=hidden th:value="${book.title}">
+            <input th:name = "title" type=hidden th:value="${book.title}">
             <input name="checkout" type = "submit" value="checkout book?"/> </form>
     </div>
 </div>
