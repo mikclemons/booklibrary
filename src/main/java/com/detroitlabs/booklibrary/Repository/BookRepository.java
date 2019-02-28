@@ -28,12 +28,11 @@ public class BookRepository {
 
     public Book updateCheckoutStatus(String title){
 
-        for(Book book: allBooks){
-            if(book.getTitle().equals(title)){
-                book.setCheckedOut(true);
-
+        for(int i = 0; i <allBooks.size(); i++){
+            if(allBooks.get(i).getTitle().equalsIgnoreCase(title)){
+               allBooks.get(i).setCheckedOut(true);
+                return allBooks.get(i);
             }
-            return book;
         }
         return null;
     }
