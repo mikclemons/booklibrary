@@ -6,13 +6,22 @@
     <title>Title</title>
 </head>
 <body>
+
+<a href="/genres/">Genres</a>
+<a href="/available/">Available</a>
+
 <div class="container" id="imageContainer">
     <div th:each="book : ${books}" id="images">
         <h2 th:text="${book.title} ">Book Title</h2>
         <a th:href="'/book/' + ${book.title}">
             <img th:src="'/photos/' + ${book.getFormattedTitleForImage()} + '.jpg'"/>
         </a>
-        <form th:action="checkoutbook" method="get" ><input name="checkout" type = "submit" value="checkout book?"/> </form>
+
+        <!--We are using this form to get a hidden field
+        of the books title to pass into the method we wrote to update the checkout status -->
+        <form action="/checkout/" method="get" >
+            <input th:name = "title" type=hidden th:value="${book.title}">
+            <input name="checkout" type = "submit" value="checkout book?"/> </form>
     </div>
 </div>
 </body>
